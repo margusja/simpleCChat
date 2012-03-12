@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
        exit(0);
     }
     portno = atoi(argv[2]);
+    while (1) {
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     if (sockfd < 0) 
         error("ERROR opening socket");
@@ -53,5 +54,6 @@ int main(int argc, char *argv[])
          error("ERROR reading from socket");
     printf("%s\n",buffer);
     close(sockfd);
+    }
     return 0;
 }
